@@ -40,7 +40,7 @@ SoftwareSerial mySerial[N_Legs] ={SoftwareSerial(0,SOFT_TX_PIN_L1),
 int16_t speed = 0xFFF;
 
 // velocita di comunicazione baudrate
-const long unsigned int motor_baudrate = 57600;
+const long unsigned int motor_baudrate = 1000000;
 
 // Matrici per il calcolo del CPG
 Matrice<1, L_size> x_p, y_p, f, ones;
@@ -199,6 +199,6 @@ void loop() {
           Legs[i].servo(ID_GOMITO,angoli[i/10][1],0x100);
           //Serial << angoli[i][0] << " " << angoli[i][1] << "\n";
     }
-    int finish_time = millis() - start_time;
+    //int finish_time = millis() - start_time;
     //Serial << finish_time << "\n";
 }
